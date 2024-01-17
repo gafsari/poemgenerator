@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Random Word Generator</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+	<div>
+		<p id="title">Title</p>
+
+	</div>
+
+	<div>
+
+		<button onclick="appendNewWord()">Click Me</button>
+		<p id="js-output"></p>
+
+	</div>
+
+	<script>
+
+		/*function chooseWord() {
+			var wordList;
+			wordList = ["helicopter", "computer", "no", "snow", "gnome", "johnny appleseed"];
+			var chosenWord = wordList[1];
+			document.getElementById('js-output').innerHTML = chosenWord;
+		};
+
+		chooseWord();*/
+
+		
+		/*function randomNumber() {
+			var randomNumber1 = Math.floor(Math.random() * 6);
+			document.getElementById('js-output').innerHTML = randomNumber1;
+		};
+
+		randomNumber();*/
+
+		function randomizeWord() {
+			var wordList;
+			wordList = ["helicopter", "computer", "no", "snow", "gnome", "johnny appleseed"];
+			var randomIndex = Math.floor(Math.random() * 6);
+			var randomWord = wordList[randomIndex];
+			document.getElementById('js-output').innerHTML = randomWord;
+		};
+
+		randomizeWord();
+
+		function appendNewWord() {
+			var secondWordList;
+			secondWordList = ["ukelele", "lorem ipsum", "dr. phil", "steel cut oats", "<br>"];
+			var secondRandomIndex = Math.floor(Math.random() * 5);
+			var newWord = secondWordList[secondRandomIndex];
+			document.getElementById('js-output').innerHTML += " " + newWord;
+
+		};
+
+		function generateTitle() {
+			var wordList;
+			wordList = ["helicopter", "computer", "no", "snow", "gnome", "johnny appleseed"];
+			var secondWordList;
+			secondWordList = ["ukelele", "lorem ipsum", "dr. phil", "steel cut oats"];
+			var rand1 = Math.floor(Math.random() * 6);
+			var rand2 = Math.floor(Math.random() * 4);
+			var poemTitle = "This is a poem called " + wordList[rand1] + " " + secondWordList[rand2] + ".";
+			if (rand2 == 3) {
+				poemTitle = "invalid";
+			};
+			
+			document.getElementById('title').innerHTML = poemTitle;
+		};
+
+		generateTitle();
+
+
+	</script>
+
+
+</body>
+
+</html>
